@@ -28,3 +28,23 @@ group by MONTH
 order by MONTH='December', MONTH='November', MONTH='October',MONTH='September',
 MONTH='August', MONTH='July', MONTH='June', MONTH='May',MONTH='April', 
 MONTH='March', MONTH='February',MONTH='January'
+
+-- cash - total quantity of payments
+SELECT FORMAT_DATE('%B', DATE(pickup_datetime)) as MONTH, count(*) as COUNT
+FROM `bigquery-public-data.new_york_taxi_trips.tlc_green_trips_2014`
+where payment_type=2
+group by MONTH
+order by MONTH='December', MONTH='November', MONTH='October',MONTH='September',
+MONTH='August', MONTH='July', MONTH='June', MONTH='May',MONTH='April', 
+MONTH='March', MONTH='February',MONTH='January'
+
+-- cash - sum of payments
+SELECT FORMAT_DATE('%B', DATE(pickup_datetime)) as MONTH, cast(round(sum(ifnull(total_amount,0)), 0) as numeric) as SUM
+FROM `bigquery-public-data.new_york_taxi_trips.tlc_green_trips_2014`
+where payment_type=2
+group by MONTH
+order by MONTH='December', MONTH='November', MONTH='October',MONTH='September',
+MONTH='August', MONTH='July', MONTH='June', MONTH='May',MONTH='April', 
+MONTH='March', MONTH='February',MONTH='January'
+
+
