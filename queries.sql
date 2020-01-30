@@ -47,4 +47,11 @@ order by MONTH='December', MONTH='November', MONTH='October',MONTH='September',
 MONTH='August', MONTH='July', MONTH='June', MONTH='May',MONTH='April', 
 MONTH='March', MONTH='February',MONTH='January'
 
+-- query and download zones polygons as 'taxi_zone_geom.csv'
+SELECT zone_name, borough, zone_geom
+FROM `bigquery-public-data.new_york_taxi_trips.taxi_zone_geom`
+
+-- query and download list of coordinates as 'coordinates-query-2014.csv'
+SELECT pickup_longitude, pickup_latitude
+FROM `bigquery-public-data.new_york_taxi_trips.tlc_green_trips_2014`
 
