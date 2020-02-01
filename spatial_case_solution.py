@@ -75,3 +75,56 @@ import pandas as pd
 df = pd.DataFrame(data={"col1": list_scores})
 df.to_csv("./list_scores.csv", sep=',',index=True)
 
+
+
+#================================#
+# Load list_scores from csv file #
+#================================#
+list_scores = pd.read_csv("./list_scores.csv", sep=',')
+#x.col1.sum()
+
+#===================================================#
+# Check if all pick-ups consist in defined polygons #
+#===================================================#
+
+
+sum(list_scores)
+Out[193]: 15830475
+
+len(coordinates_query_2014)
+Out[194]: 15837001
+
+len(coordinates_query_2014) - sum(list_scores)
+Out[195]: 6526
+
+6526/15837001
+Out[197]: 0.000412072967602894
+# Very small percentage of pick-ups is out of defined polygons
+
+
+#=========================#
+# Show most pick up areas #
+#=========================#
+pd.options.display.max_colwidth = 100
+
+taxi_zone_geom.iloc[0,:]
+taxi_zone_geom.iloc[1,:]
+taxi_zone_geom.iloc[2,:]
+taxi_zone_geom.iloc[3,:]
+taxi_zone_geom.iloc[4,:]
+
+taxi_zone_geom.sort_values('scores', ascending=False, inplace = True)
+pd.set_option('display.max_rows', 400)
+
+# Show top 20 zones with biggest number of pick-ups
+taxi_zone_geom[0:20][['zone_name','borough', 'scores']]
+
+"""
+Williamsburg (North Side), Brooklyn, 809111
+Astoria, Queens, 788806
+East Harlem North, Manhattan, 783504
+Central Harlem, Manhattan, 763478
+East Harlem South, Manhattan, 700492
+"""
+
+
