@@ -128,3 +128,35 @@ East Harlem South, Manhattan, 700492
 """
 
 
+#=================================================================#
+# Charts #
+#========#
+
+#================================================#
+# Draw a map #
+#============#
+
+#=====================#
+# Create geopandas df #
+#=====================#
+
+# Add pandas series scores as a column to df for visualization
+taxi_zone_geom['scores'] = list_scores['col1']
+taxi_zone_geom.iloc[0,:]
+
+
+# Convert polygons and multipolygons to shapely objects
+import shapely
+list_polygons = []
+for i in range(len(taxi_zone_geom)):
+    P = shapely.wkt.loads(taxi_zone_geom.loc[i,:][3])
+    list_polygons.append(P)
+
+# assign object to new column 'geometry'
+taxi_zone_geom['geometry'] = list_polygons
+
+# Convert 'taxi_zone_geom' df to geodf
+my_geo_df = gpd.GeoDataFrame(taxi_zone_geom, geometry='geometry')
+type(my_geo_df)
+
+
