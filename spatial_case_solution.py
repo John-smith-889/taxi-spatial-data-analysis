@@ -160,3 +160,31 @@ my_geo_df = gpd.GeoDataFrame(taxi_zone_geom, geometry='geometry')
 type(my_geo_df)
 
 
+#======================#
+# Plot NY taxi pickups #
+#======================#
+import descartes
+%matplotlib
+my_geo_df.plot(legend=True)
+
+# Plot New York taxi pick ups with an accurate legend
+from mpl_toolkits.axes_grid1 import make_axes_locatable
+import matplotlib.pyplot as plt
+# Create figure and axis
+#fig, ax = plt.subplots(1, 1)
+fig, ax = plt.subplots(figsize=(20, 10))
+
+divider = make_axes_locatable(ax)
+cax = divider.append_axes("right", size="5%", pad=0.1)
+
+
+# Add a plot
+my_geo_df.plot(column='scores', ax=ax, legend=True, cax=cax)
+
+# Add title and axis names
+ax.set_title("Taxi pick ups in New York 2014", fontsize=25)
+ax.set_xlabel('Longitude', fontsize=12)
+ax.set_ylabel('Latitude', fontsize=12)
+
+
+
