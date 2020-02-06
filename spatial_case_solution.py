@@ -188,3 +188,37 @@ ax.set_ylabel('Latitude', fontsize=12)
 
 
 
+#===============================================================#
+# Draw charts #
+#=============#
+
+#====================================================#
+# Wykres przejazdow w poszczegolnych dniach tygodnia #
+#====================================================#
+
+# libraries
+import numpy as np
+import matplotlib.pyplot as plt
+ 
+# dataset
+height = [2886558, 2529861, 2403479, 2166242, 2116223, 1901826, 1832812]
+bars = ('Saturday', 'Friday', 'Sunday', 'Thursday', 'Wednesday', 'Tuesday','Monday' )
+y_pos = np.arange(len(bars))
+ 
+# Create bars and choose color
+plt.bar(y_pos, height, color = (0.5,0.1,0.5,0.6))
+ 
+# Add title and axis names
+plt.title('Liczba przejazdów taksówkami SHL w Nowym Jorku w 2014 roku')
+plt.xlabel('Dzień tygodnia')
+plt.ylabel('liczba przejazdów')
+ 
+# Limits for the Y axis
+plt.ylim(0,60)
+ 
+# Create names
+plt.xticks(y_pos, bars)
+ 
+# Show graphic
+plt.show()
+
