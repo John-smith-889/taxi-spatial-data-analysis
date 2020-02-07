@@ -222,3 +222,58 @@ plt.xticks(y_pos, bars)
 # Show graphic
 plt.show()
 
+
+#=============================================#
+# wykres liczby przejazdów z płatnoscia karta #
+#=============================================#
+
+# dataset
+height = [284612, 353284, 479830, 512879, 579003, 552074, 531051,568535,598759,670519,703034,719046]
+bars = ('Jan', 'Feb', 'March', 'April', 'May', 'June','July','Aug','Sept', 'Oct', 'Nov', 'Dec'  )
+y_pos = np.arange(len(bars))
+ 
+# Create bars and choose color
+plt.bar(y_pos, height, color = (0.5,0.1,0.5,0.6))
+ 
+# Add title and axis names
+plt.title('Liczba przejazdów taksówkami SHL z płatnością kartą w Nowym Jorku w 2014 roku' )
+plt.xlabel('Miesiąc')
+plt.ylabel('liczba przejazdów')
+ 
+# Limits for the Y axis
+#plt.ylim(0,60)
+ 
+# Create names
+plt.xticks(y_pos, bars)
+ 
+# Show graphic
+plt.show()
+
+
+#========================================================#
+# wykres sum płatnosci karta w poszczegolnych miesiacach #
+#========================================================#
+
+
+# dataset
+height = [5.067846, 6.343703, 8.628222, 9.353807, 11.054191, 10.500344, 9.920291,10.583308,11.148563,12.159160,12.519116,12.905380]
+bars = ('Jan', 'Feb', 'March', 'April', 'May', 'June','July','Aug','Sept', 'Oct', 'Nov', 'Dec'  )
+y_pos = np.arange(len(bars))
+ 
+# Create bars and choose color
+plt.bar(y_pos, height, color = (0.5,0.1,0.5,0.6))
+ 
+# Add title and axis names
+plt.title('Płatności kartą podczas przejazdów taksówkami SHL w Nowym Jorku w 2014 roku' )
+plt.xlabel('Miesiąc')
+plt.ylabel('Suma płatności w danym miesiącu (miliony dolarów)')
+ 
+# Limits for the Y axis
+#plt.ylim(0,60)
+ 
+# Create names
+plt.xticks(y_pos, bars)
+ 
+# Show graphic
+plt.show()
+
