@@ -277,3 +277,60 @@ plt.xticks(y_pos, bars)
 # Show graphic
 plt.show()
 
+
+#===============================================#
+# wykres liczby przejazdów z płatnoscia gotowka #
+#===============================================#
+
+# dataset
+height = [514779, 647402, 808091, 791204, 837085, 780533, 736623,769610,756047,812702,835802,916998]
+bars = ('Jan', 'Feb', 'March', 'April', 'May', 'June','July','Aug','Sept', 'Oct', 'Nov', 'Dec'  )
+y_pos = np.arange(len(bars))
+ 
+# Create bars and choose color
+plt.bar(y_pos, height, color = (0.5,0.1,0.5,0.6))
+ 
+# Add title and axis names
+plt.title('Liczba przejazdów taksówkami SHL z płatnością gotówką w Nowym Jorku w 2014 roku' )
+plt.xlabel('Miesiąc')
+plt.ylabel('liczba przejazdów')
+ 
+# Limits for the Y axis
+#plt.ylim(0,60)
+ 
+# Create names
+plt.xticks(y_pos, bars)
+ 
+# Show graphic
+plt.show()
+
+
+
+#==========================================================#
+# wykres sum płatnosci gotowka w poszczegolnych miesiacach #
+#==========================================================#
+
+# dataset
+height = [5.891990, 7.540944, 9.384446, 9.340737, 10.187642, 9.473473, 89.25931,9.399270,9.130888,9.664547,9.768032,10.675385]
+bars = ('Jan', 'Feb', 'March', 'April', 'May', 'June','July','Aug','Sept', 'Oct', 'Nov', 'Dec'  )
+y_pos = np.arange(len(bars))
+ 
+# Create bars and choose color
+plt.bar(y_pos, height, color = (0.5,0.1,0.5,0.6))
+ 
+# Add title and axis names
+plt.title('Płatności gotówką podczas przejazdów taksówkami SHL w Nowym Jorku w 2014 roku' )
+plt.xlabel('Miesiąc')
+plt.ylabel('Suma płatności w danym miesiącu (dolary)')
+ 
+# Limits for the Y axis
+#plt.ylim(0,60)
+ 
+# Create names
+plt.xticks(y_pos, bars)
+ 
+# Show graphic
+plt.show()
+
+
+
